@@ -59,7 +59,7 @@ let map;
         // getWeather(pickupLocation, unicorn)
 
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
+            displayUpdate(updatedNames[0] + ' has arrived. Giddy up!', unicorn.Color);
             WildRydes.map.unsetLocation();
 
             $('#request').prop('disabled', 'disabled');
