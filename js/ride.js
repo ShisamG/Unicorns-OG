@@ -50,8 +50,9 @@ let map;
 
         console.log('Response received from API: ', result);
         unicorn = result.Unicorn;
-        pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.Color);
+        pronoun = unicorn.Gender === 'Female' ? 'her' : 'his';
+        var updatedNames = [`Shisam 1`, `Shisam 2`, `Shisam 3`];
+        displayUpdate(updatedNames[0] + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.Color);
 
         console.log(pickupLocation);
         //  get the local weather, find nearby restaurants, movies
