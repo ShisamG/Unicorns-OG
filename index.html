@@ -24,6 +24,7 @@
         <li><a href="investors.html">Investors &amp; Board of Directors</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="apply.html">Apply</a></li>
+    
       </ul>
     </nav>
     <button type="button" class="btn-menu"><span>Menu</span></button>
@@ -75,6 +76,17 @@
       <p class="content">
         Wild Rydes was started by a former hedge fund analyst and a software developer. The two long-time friends happened upon the Wild Rydes idea after attending a silent yoga retreat in Nevada. After gazing upon the majestic herds of unicorns prancing across a surreal Nevada sunset, they witnessed firsthand the poverty and unemployment endemic to that once proud race. Whether it was modern society’s reliance on science over magic or not, we’ll never know the cause of their Ozymandian downfall and fade to obscurity. Moved by empathy, romance, and free enterprise, they saw an opportunity to marry society’s demand for faster, more flexible transportation to underutilized beasts of labor through an on-demand market making transportation app. Using the founders’ respective expertise in animal husbandry and software engineering, Wild Rydes was formed and has since raised untold amounts of venture capital. Today, Wild Rydes has thousands of unicorns in its network fulfilling hundreds of rydes each day.
       </p>
+      <div class="jokes-motivations-section">
+      <h2 class="section-title">Select Joke or Motivation</h2>
+      <form>
+        <input type="radio" id="motivation" name="content" value="motivation">
+        <label for="motivation">Get Motivation</label><br>
+        <input type="radio" id="joke" name="content" value="joke">
+        <label for="joke">Get a Joke</label><br><br>
+        <button onclick="getContent()">Get Content</button>
+      </form>
+      <p id="output"></p>
+    </div>
     </div>
   </section>
 
@@ -156,7 +168,86 @@
       </div>
     </div>
   </footer>
+  <script>
+  function getContent() {
+    const radios = document.getElementsByName('content');
+    let selectedContent;
 
+    for (const radio of radios) {
+      if (radio.checked) {
+        selectedContent = radio.value;
+        break;
+      }
+    }
+
+    if (selectedContent === 'motivation') {
+ const motivations = [      
+"The only way to do great work is to love what you do. - Steve Jobs",
+"Believe you can and you're halfway there. - Theodore Roosevelt",
+"Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+"The only way to do great work is to love what you do. - Steve Jobs”,
+"Don't watch the clock; do what it does. Keep going. - Sam Levenson”,
+"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer”,
+"The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela”,
+"The only person you should try to be better than is the person you were yesterday. - Matty Mullins”,
+"Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got this. - Chantal Sutherland”,
+"Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill”,
+"The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt”,
+"Believe you can, and you're halfway there. - Theodore Roosevelt”,
+"Your time is limited, don't waste it living someone else's life. - Steve Jobs”,
+"The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt”,
+"The harder I work, the luckier I get. - Samuel Goldwyn”,
+"Success is walking from failure to failure with no loss of enthusiasm. - Winston Churchill”,
+"Don't be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett”,
+"The best way to predict the future is to create it. - Peter Drucker”,
+"The secret of getting ahead is getting started. - Mark Twain”,
+"Believe in yourself, take on your challenges, and persevere. But don't forget to enjoy the journey. - Michael Josephson”,
+"The only place where success comes before work is in the dictionary. - Vidal Sassoon”,
+"The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt”,
+"You miss 100% of the shots you don't take. - Wayne Gretzky”,
+"The only way to do great work is to love what you do. - Steve Jobs”,
+"Don't watch the clock; do what it does. Keep going. - Sam Levenson”,
+"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer”,
+"The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela”,
+"The only person you should try to be better than is the person you were yesterday. - Matty Mullins”,
+"Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got this. - Chantal Sutherland”,
+"Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill”,
+"The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt”,
+"Believe you can, and you're halfway there. - Theodore Roosevelt”,
+"Your time is limited, don't waste it living someone else's life. - Steve Jobs”,
+
+    ];
+let currentMotivationIndex = 0;
+
+    currentMotivationIndex++;
+    if (currentMotivationIndex >= motivations.length) {
+      currentMotivationIndex = 0; // Reset to first quote if end is reached
+    }
+    document.getElementById("output").innerHTML = motivations[currentMotivationIndex];
+  } else if (selectedContent === 'joke') {
+     const jokes = [
+  "Why don't scientists trust atoms? Because they make up everything!",
+  "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+  "Why did the scarecrow win an award? Because he was outstanding in his field!",
+  "Why did the bicycle fall over? Because it was two-tired!",
+  "Before you marry a person, you should first make them use a computer with a slow Internet connection to see who they really are.",
+  "Their first daughter was born with a silver spoon in her mouth. Now they’re hoping for triplets so they can have a whole set.",
+  "You’ll always stay young if you live honestly, eat slowly, sleep sufficiently, work industriously, worship faithfully and lie about your age.",
+  "The claustrophobic astronaut? He just wanted a little more space.",
+  "How many DIY buffs does it take to change a light bulb? One, but it takes two weeks and four trips to the hardware store.",
+];
+
+let currentJokeIndex = 0;
+
+
+    currentJokeIndex++;
+    if (currentJokeIndex >= jokes.length) {
+      currentJokeIndex = 0; // Reset to first joke if end is reached
+    }
+    document.getElementById("output").innerHTML = jokes[currentJokeIndex];
+  }
+}
+</script>
   <script src="js/vendor.js"></script>
 
   <script src="js/main.js"></script>
