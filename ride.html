@@ -87,7 +87,86 @@
             </div>
         </div>
     </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Choose Content</h3>
+        </div>
+        <div class="panel-body">
+            <label class="radio-inline">
+                <input type="radio" name="content" value="motivation"> Motivation
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="content" value="joke"> Joke
+            </label>
+            <button onclick="getContent()" class="btn btn-primary">Get Content</button>
+        </div>
+    </div>
 
+    <div id="contentDisplay">
+    <div id="motivationContent" style="display: none;">
+       <p> "The only way to do great work is to love what you do." - Steve Jobs</p>
+        <p> "Believe you can and you're halfway there." - Theodore Roosevelt</p>
+        <p> "Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+        <p> "The only way to do great work is to love what you do." - Steve Jobs</p>
+        <p> "Don't watch the clock; do what it does. Keep going." - Sam Levenson</p>
+        <p> "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful." - Albert Schweitzer</p>
+        <p> "The greatest glory in living lies not in never falling, but in rising every time we fall." - Nelson Mandela</p>
+        <p>"The only person you should try to be better than is the person you were yesterday." - Matty Mullins</p>
+        <p>"Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got this." - Chantal Sutherland</p>
+        <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+        <p>"The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+        <p>"Believe you can, and you're halfway there." - Theodore Roosevelt</p>
+        <p>"Your time is limited, don't waste it living someone else's life." - Steve Jobs</p>
+        <p>"The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt</p>
+        <p>"The harder I work, the luckier I get." - Samuel Goldwyn</p>
+        <p>"Success is walking from failure to failure with no loss of enthusiasm." - Winston Churchill</p>
+        <p>"Don't be pushed around by the fears in your mind. Be led by the dreams in your heart." - Roy T. Bennett</p>
+        <p>"The best way to predict the future is to create it." - Peter Drucker</p>
+        <p>"The secret of getting ahead is getting started." - Mark Twain</p>
+        <p>"Believe in yourself, take on your challenges, and persevere. But don't forget to enjoy the journey." - Michael Josephson</p>
+        <p>"The only place where success comes before work is in the dictionary." - Vidal Sassoon</p>
+        <p>"The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt</p>
+        <p>"You miss 100% of the shots you don't take." - Wayne Gretzky</p>
+        <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+        <p>"Don't watch the clock; do what it does. Keep going." - Sam Levenson</p>
+        <p>"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful." - Albert Schweitzer</p>
+        <p>"The greatest glory in living lies not in never falling, but in rising every time we fall." - Nelson Mandela</p>
+        <p>"The only person you should try to be better than is the person you were yesterday." - Matty Mullins</p>
+        <p>"Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got this." - Chantal Sutherland</p>
+        <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+        <p>"The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+        <p>"Believe you can, and you're halfway there." - Theodore Roosevelt</p>
+        <p>"Your time is limited, don't waste it living someone else's life." - Steve Jobs</p>
+    </div>
+    <div id="jokeContent" style="display: none;">
+        <p>"Why don't scientists trust atoms? Because they make up everything!"</p>
+        <p>"Parallel lines have so much in common. It’s a shame they’ll never meet."</p>
+        <p>"Why did the scarecrow win an award? Because he was outstanding in his field!"</p>
+        <p>"Why did the bicycle fall over? Because it was two-tired!"</p>
+        <p>"Before you marry a person, you should first make them use a computer with a slow Internet connection to see who they really are."</p>
+        <p>"Their first daughter was born with a silver spoon in her mouth. Now they’re hoping for triplets so they can have a whole set."</p>
+        <p>"You’ll always stay young if you live honestly, eat slowly, sleep sufficiently, work industriously, worship faithfully and lie about your age."</p>
+        <p>"The claustrophobic astronaut? He just wanted a little more space."</p>
+        <p>"How many DIY buffs does it take to change a light bulb? One, but it takes two weeks and four trips to the hardware store."</p>
+    </div>
+    <button onclick="getContent('motivation')">Get Motivation</button>
+    <button onclick="getContent('joke')">Get Joke</button>
+    <script>
+        function getContent(type) {
+            const motivationDiv = document.getElementById('motivationContent');
+            const jokeDiv = document.getElementById('jokeContent');
+
+            if (type === 'motivation') {
+                motivationDiv.style.display = 'block';
+                jokeDiv.style.display = 'none';
+            } else if (type === 'joke') {
+                jokeDiv.style.display = 'block';
+                motivationDiv.style.display = 'none';
+            }
+        }
+    </script>
+</div>
     <script src="js/vendor/jquery-3.1.0.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/aws-cognito-sdk.min.js"></script>
