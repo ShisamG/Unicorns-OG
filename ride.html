@@ -36,10 +36,10 @@
         <div class="panel-body">
             <div class="panel-body">
             <label class="radio-inline">
-                <input type="radio" name="content" value="motivation"> Motivation
+                <input type="radio" name="content" id="motivation" value="motivation"> Motivation
             </label>
             <label class="radio-inline">
-                <input type="radio" name="content" value="joke"> Joke
+                <input type="radio" name="content" id="joke" value="joke"> Joke
             </label>
             <button onclick="getContent()" class="btn btn-primary">Get Content</button>
         </div>
@@ -156,15 +156,13 @@
         function getContent(type) {
             const motivationDiv = document.getElementById('motivationContent');
             const jokeDiv = document.getElementById('jokeContent');
-
-            if (type === 'motivation') {
-                motivationDiv.style.display = 'block';
+if(document.getElementById('motivation').checked) {
+  motivationDiv.style.display = 'block';
                 jokeDiv.style.display = 'none';
-            } else if (type === 'joke') {
-                jokeDiv.style.display = 'block';
+}else if(document.getElementById('joke').checked) {
+  jokeDiv.style.display = 'block';
                 motivationDiv.style.display = 'none';
-            }
-        }
+}
     </script>
 </div>
     <script src="js/vendor/jquery-3.1.0.js"></script>
